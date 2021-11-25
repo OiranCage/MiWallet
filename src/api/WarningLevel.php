@@ -1,7 +1,7 @@
 <?php
 
 
-namespace oiran;
+namespace oiran\api;
 
 
 class WarningLevel

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace oiran;
+namespace oiran\api;
 
 
 use Exception;
