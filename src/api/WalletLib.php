@@ -1,12 +1,12 @@
 <?php
 
 
-namespace oiran\api;
+namespace oiran\walletlib\api;
 
 
 use Exception;
-use oiran\model\Option;
-use oiran\storage\OptionStorage;
+use oiran\walletlib\model\Option;
+use oiran\walletlib\storage\OptionStorage;
 
 class WalletLib
 {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace oiran\api;
+namespace oiran\walletlib\api;
 
 
 class WarningLevel

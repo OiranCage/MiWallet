@@ -1,10 +1,10 @@
 <?php
 
 
-namespace oiran\storage;
+namespace oiran\walletlib\storage;
 
 
-use oiran\model\Option;
+use oiran\walletlib\model\Option;
 
 class OptionStorage
 {

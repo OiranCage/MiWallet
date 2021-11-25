@@ -1,7 +1,7 @@
 <?php
 
 
-namespace oiran\usecase;
+namespace oiran\walletlib\usecase;
 
 
 use oiran\storage\OptionStorage;
