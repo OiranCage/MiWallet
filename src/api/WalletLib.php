@@ -12,11 +12,6 @@ class WalletLib
 {
 	private static ?WalletLib $instance = null;
 
-	/**
-	 * @param string $dataFileName
-	 * @param string $dataFilePath
-	 * @param int $warningLevel
-	 */
 	public static function init(
 		string $dataFileName,
 		string $dataFilePath,
