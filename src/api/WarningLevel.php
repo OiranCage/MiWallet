@@ -14,4 +14,6 @@ class WarningLevel
 
 	// If the value of Wallet::moneyAmount is invalid, the method will return false.
 	public const RETURN_FAILED_RESULT = 2;
+
+	private function __construct() {}
 }

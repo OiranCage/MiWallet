@@ -17,4 +17,6 @@ class OptionStorage
 	public static function getOption(): Option {
 		return self::$option;
 	}
+
+	private function __construct() {}
 }
