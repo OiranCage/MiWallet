@@ -1,0 +1,25 @@
+# IDEs
+.idea/
+nbproject/
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Composer
+vendor/*
+composer.phar
+composer.lock
+
+# PHP
+bin/*
+*.phar
