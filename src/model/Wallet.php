@@ -11,4 +11,12 @@ class Wallet
 		private string $ownerXuid,
 		private string $ownerName
 	) {}
+
+	public function getOwnerXuid(): string {
+		return $this->ownerXuid;
+	}
+
+	public function getOwnerName(): string {
+		return $this->ownerName;
+	}
 }

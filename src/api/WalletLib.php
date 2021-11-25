@@ -12,16 +12,10 @@ class WalletLib
 {
 	private static ?WalletLib $instance = null;
 
-	public static function init(
-		string $dataFileName,
-		string $dataFilePath,
-		int $warningLevel = WarningLevel::RETURN_FAILED_RESULT
-	) {
-		OptionStorage::init(new Option($warningLevel, $dataFileName));
-
-		$dataFileName .= ".json";
-		if(!file_exists($fullPath = $dataFilePath.$dataFileName)) {
-			file_put_contents($fullPath, "{}");
+	public static function init(string $fileName, string $folderPath, int $warningLevel = WarningLevel::DO_NOT_PROCESS) {
+		OptionStorage::init($option = new Option($warningLevel, $fileName.".json", $folderPath));
+		if(!file_exists($option->getFullPath())) {
+			file_put_contents($option->getFullPath(), "{}");
 		}
 	}
 
