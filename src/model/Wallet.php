@@ -1,10 +1,8 @@
 <?php
 
 
-declare(strict_types=1);
+namespace oiran\model;
 
-
-namespace oiran;
 
 class Wallet
 {
