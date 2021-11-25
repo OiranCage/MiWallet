@@ -2,7 +2,7 @@
   "name": "oirancage/wallet-lib",
   "description": "a library for adding economic concepts.",
   "type": "project",
-  "license": "LGPL-3.0",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "oiran\\": "src/"
