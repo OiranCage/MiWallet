@@ -13,7 +13,7 @@ class WarningLevel
 	public const THROW_EXCEPTION = 1;
 
 	// If the value of Wallet::moneyAmount is invalid, the method will return false.
-	public const RETURN_FAILED_RESULT = 2;
+	public const DO_NOT_PROCESS = 2;
 
 	private function __construct() {}
 }
