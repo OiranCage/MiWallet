@@ -14,9 +14,12 @@ class InputWalletDataUseCase
 		$walletMap = WalletLib::repository()->getDecodeWalletMap();
 		foreach (WalletLib::store() as $wallet) {
 			$walletMap[$wallet->getOwnerXuid()] = WalletDTO::encode($wallet);
+			// WalletLib::store()->delete($wallet->getOwnerXuid());
 		}
 
 		$jsonData = json_encode($walletMap, $jsonFlag);
 		file_put_contents(OptionStorage::getOption()->getFullPath(), $jsonData);
+
+		WalletLib::join();
 	}
 }
