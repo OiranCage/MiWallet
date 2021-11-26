@@ -8,17 +8,17 @@ use oiran\walletlib\model\Wallet;
 
 class WalletStore
 {
-	public static array $walletMap = [];
+	public array $walletMap = [];
 
-	public static function add(Wallet $wallet) {
-		self::$walletMap[$wallet->getOwnerXuid()] = $wallet;
+	public function add(Wallet $wallet) {
+		$this->walletMap[$wallet->getOwnerXuid()] = $wallet;
 	}
 
-	public static function delete(string $xuid) {
-		unset(self::$walletMap[$xuid]);
+	public function delete(string $xuid) {
+		unset($this->walletMap[$xuid]);
 	}
 
-	public static function findBy(string $xuid): ?Wallet {
-		return self::$walletMap[$xuid] ?? null;
+	public function findBy(string $xuid): ?Wallet {
+		return $this->walletMap[$xuid] ?? null;
 	}
 }
