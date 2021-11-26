@@ -23,28 +23,24 @@ class WalletLib
 			file_put_contents($option->getFullPath(), "{}");
 		}
 
+		self::join();
+	}
+
+	public static function join() {
 		self::$store = new WalletStore();
-		self::$repository = new WalletRepository(OutputWalletDataUseCase::execute());
+		self::$repository = new WalletRepository();
 	}
 
 	public static function save(int $jsonFlag = JSON_PRETTY_PRINT) {
 		InputWalletDataUseCase::execute($jsonFlag);
 	}
 
-	/**
-	 * @return WalletStore
-	 * @throws Exception
-	 */
 	public static function store(): WalletStore {
-		return self::$store ?? throw new Exception("WalletStore not initialized.");
+		return self::$store /*?? throw new Exception("WalletStore not initialized.")*/;
 	}
 
-	/**
-	 * @return WalletRepository
-	 * @throws Exception
-	 */
 	public static function repository(): WalletRepository {
-		return self::$repository ?? throw new Exception("WalletRepository not initialized.");
+		return self::$repository /*?? throw new Exception("WalletRepository not initialized.")*/;
 	}
 
 	private function __construct() {}
