@@ -14,10 +14,8 @@ class WalletDTO
 
 	public static function encode(Wallet $wallet): array {
 		return [
-			$wallet->getOwnerXuid() => [
-				"moneyAmount" => $wallet->getMoney(),
-				"ownerName" => $wallet->getOwnerName()
-			]
+			"moneyAmount" => $wallet->getMoney(),
+			"ownerName" => $wallet->getOwnerName()
 		];
 	}
 }
