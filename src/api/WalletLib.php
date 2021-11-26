@@ -20,7 +20,7 @@ class WalletLib
 	public static function init(string $fileName, string $folderPath, int $warningLevel = WarningLevel::DO_NOT_PROCESS) {
 		OptionStorage::init($option = new Option($warningLevel, $fileName.".json", $folderPath));
 		if(!file_exists($option->getFullPath())) {
-			file_put_contents($option->getFullPath(), "{}");
+			file_put_contents($option->getFullPath(), json_encode([]));
 		}
 
 		self::join();
