@@ -1,7 +1,7 @@
 <?php
 
 
-namespace oiran\walletlib\lib;
+namespace oiran\walletlib;
 
 
 use Exception;
