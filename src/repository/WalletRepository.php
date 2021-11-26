@@ -6,12 +6,15 @@ namespace oiran\walletlib\repository;
 
 use oiran\walletlib\dto\WalletDTO;
 use oiran\walletlib\model\Wallet;
+use oiran\walletlib\usecase\OutputWalletDataUseCase;
 
 class WalletRepository
 {
-	public function __construct(
-		private array $decodeWalletMap
-	) {}
+	private array $decodeWalletMap;
+
+	public function __construct() {
+		$this->decodeWalletMap = OutputWalletDataUseCase::execute();
+	}
 
 	public function push(Wallet $wallet) {
 		$this->decodeWalletMap[$wallet->getOwnerXuid()] = $wallet;
