@@ -13,7 +13,7 @@ class Option
 		private string $dataFileName,
 		private string $folderPath
 	) {
-		$this->fullPath = $$this->folderPath.$$this->dataFileName;
+		$this->fullPath = $this->folderPath.$this->dataFileName;
 	}
 
 	public function getWarningLevel(): int {
