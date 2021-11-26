@@ -4,7 +4,8 @@
 namespace oiran\walletlib\usecase;
 
 
-use oiran\storage\OptionStorage;
+
+use oiran\walletlib\storage\OptionStorage;
 
 class OutputWalletDataUseCase
 {
