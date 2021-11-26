@@ -10,7 +10,7 @@ use oiran\walletlib\model\Wallet;
 class WalletRepository
 {
 	public function __construct(
-		public array $decodeWalletMap
+		private array $decodeWalletMap
 	) {}
 
 	public function push(Wallet $wallet) {
