@@ -9,6 +9,7 @@ use oiran\walletlib\model\Option;
 use oiran\walletlib\repository\WalletRepository;
 use oiran\walletlib\storage\OptionStorage;
 use oiran\walletlib\store\WalletStore;
+use oiran\walletlib\usecase\InputWalletDataUseCase;
 use oiran\walletlib\usecase\OutputWalletDataUseCase;
 
 class WalletLib
@@ -24,6 +25,10 @@ class WalletLib
 
 		self::$store = new WalletStore();
 		self::$repository = new WalletRepository(OutputWalletDataUseCase::execute());
+	}
+
+	public static function save(int $jsonFlag = JSON_PRETTY_PRINT) {
+		InputWalletDataUseCase::execute($jsonFlag);
 	}
 
 	/**
