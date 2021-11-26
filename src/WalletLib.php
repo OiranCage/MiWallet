@@ -6,12 +6,15 @@ namespace oiran\walletlib;
 
 use Exception;
 use oiran\walletlib\model\Option;
+use oiran\walletlib\repository\WalletRepository;
 use oiran\walletlib\storage\OptionStorage;
 use oiran\walletlib\store\WalletStore;
+use oiran\walletlib\usecase\OutputWalletDataUseCase;
 
 class WalletLib
 {
 	private static ?WalletStore $store = null;
+	private static ?WalletRepository $repository = null;
 
 	public static function init(string $fileName, string $folderPath, int $warningLevel = WarningLevel::DO_NOT_PROCESS) {
 		OptionStorage::init($option = new Option($warningLevel, $fileName.".json", $folderPath));
@@ -20,6 +23,7 @@ class WalletLib
 		}
 
 		self::$store = new WalletStore();
+		self::$repository = new WalletRepository(OutputWalletDataUseCase::execute());
 	}
 
 	/**
@@ -27,7 +31,15 @@ class WalletLib
 	 * @throws Exception
 	 */
 	public static function store(): WalletStore {
-		return self::$store ?? throw new Exception("Store not initialized.");
+		return self::$store ?? throw new Exception("WalletStore not initialized.");
+	}
+
+	/**
+	 * @return WalletRepository
+	 * @throws Exception
+	 */
+	public static function repository(): WalletRepository {
+		return self::$repository ?? throw new Exception("WalletRepository not initialized.");
 	}
 
 	private function __construct() {}
