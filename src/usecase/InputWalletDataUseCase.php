@@ -4,9 +4,9 @@
 namespace oiran\walletlib\usecase;
 
 
+use oiran\walletlib\api\WalletLib;
 use oiran\walletlib\dto\WalletDTO;
 use oiran\walletlib\storage\OptionStorage;
-use oiran\walletlib\WalletLib;
 
 class InputWalletDataUseCase
 {
