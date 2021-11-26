@@ -7,10 +7,11 @@ namespace test;
 use oiran\walletlib\api\WalletLib;
 use oiran\walletlib\api\WarningLevel;
 use oiran\walletlib\model\Wallet;
+use PHPUnit\Framework\TestCase;
 
-class WalletTest
+class WalletTest extends TestCase
 {
-	public static function execute() {
+	public function testExecute() {
 		WalletLib::init("test", "C:\Users\admin\Desktop\\");
 		echo "Init Success.".PHP_EOL;
 
@@ -28,29 +29,23 @@ class WalletTest
 
 
 		$wallet = new Wallet("test", "test", 0);
-		$result = $wallet->earnCoin(PHP_INT_MAX + 1);
-		echo "earn result: $result";
-
-		$wallet = new Wallet("test", "test", 0);
 		$result = $wallet->spendCoin(100);
-		echo "earn result: $result";
+		echo $result .PHP_EOL;
 
 
 		WalletLib::init("test", "C:\Users\admin\Desktop\\", WarningLevel::NONE);
 		echo "Init Success.".PHP_EOL;
 
 		$wallet = new Wallet("test", "test", 0);
-		$wallet->earnCoin(PHP_INT_MAX + 1);
-		echo $wallet->getMoney();
-
-		$wallet = new Wallet("test", "test", 0);
 		$wallet->spendCoin(100);
-		echo $wallet->getMoney();
+		echo $wallet->getMoney().PHP_EOL;
 
 
 		WalletLib::init("test", "C:\Users\admin\Desktop\\", WarningLevel::THROW_EXCEPTION);
 		echo "Init Success.".PHP_EOL;
 
-		$wallet->earnCoin(PHP_INT_MAX + 1);
+		// $wallet->spendCoin(-1);
+
+		$this->assertSame(0, 1); // ?
 	}
 }
