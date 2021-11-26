@@ -7,10 +7,14 @@ namespace oiran\walletlib\model;
 class Wallet
 {
 	public function __construct(
-		private int $moneyAmount,
 		private string $ownerXuid,
-		private string $ownerName
+		private string $ownerName,
+		private int $moneyAmount
 	) {}
+
+	public function getMoney(): int {
+		return $this->moneyAmount;
+	}
 
 	public function getOwnerXuid(): string {
 		return $this->ownerXuid;
