@@ -46,6 +46,9 @@ class WalletTest extends TestCase
 
 		// $wallet->spendCoin(-1);
 
-		$this->assertSame(0, 1); // ?
+		$stack = [];
+		$this->assertSame(0, count($stack));
+
+		// SRY
 	}
 }

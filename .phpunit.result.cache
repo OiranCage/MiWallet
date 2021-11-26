@@ -1,1 +1,1 @@
-{"version":1,"defects":{"test\\WalletTest::testExecute":5,"Warning":6},"times":{"test\\WalletTest::testExecute":0.018,"Warning":0.054}}
+{"version":1,"defects":{"test\\WalletTest::testExecute":5,"Warning":6},"times":{"test\\WalletTest::testExecute":0.144,"Warning":0.054}}
