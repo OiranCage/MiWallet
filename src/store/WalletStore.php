@@ -8,7 +8,9 @@ use oiran\walletlib\model\Wallet;
 
 class WalletStore
 {
-	public array $walletMap = [];
+	public function __construct(
+		public array $walletMap = []
+	) {}
 
 	public function add(Wallet $wallet) {
 		$this->walletMap[$wallet->getOwnerXuid()] = $wallet;
