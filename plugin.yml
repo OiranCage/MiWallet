@@ -1,0 +1,4 @@
+main: oiran\walletlib\Main
+name: WalletLib
+version: 0.0.1
+src-namespace-prefix: oiran\walletlib
