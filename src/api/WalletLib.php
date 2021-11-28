@@ -7,7 +7,7 @@ namespace oiran\walletlib\api;
 use Exception;
 use oiran\walletlib\model\Option;
 use oiran\walletlib\repository\WalletRepository;
-use oiran\walletlib\storage\OptionStorage;
+use oiran\walletlib\pool\OptionPool;
 use oiran\walletlib\store\WalletStore;
 use oiran\walletlib\usecase\InputWalletDataUseCase;
 use oiran\walletlib\usecase\OutputWalletDataUseCase;
@@ -18,7 +18,7 @@ class WalletLib
 	private static ?WalletRepository $repository = null;
 
 	public static function init(string $fileName, string $folderPath, int $warningLevel = WarningLevel::DO_NOT_PROCESS) {
-		OptionStorage::init($option = new Option($warningLevel, $fileName.".json", $folderPath));
+		OptionPool::init($option = new Option($warningLevel, $fileName.".json", $folderPath));
 		if(!file_exists($option->getFullPath())) {
 			file_put_contents($option->getFullPath(), json_encode([]));
 		}

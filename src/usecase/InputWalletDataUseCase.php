@@ -6,7 +6,7 @@ namespace oiran\walletlib\usecase;
 
 use oiran\walletlib\api\WalletLib;
 use oiran\walletlib\dto\WalletDTO;
-use oiran\walletlib\storage\OptionStorage;
+use oiran\walletlib\pool\OptionPool;
 
 class InputWalletDataUseCase
 {
@@ -18,7 +18,7 @@ class InputWalletDataUseCase
 		}
 
 		$jsonData = json_encode($walletMap, $jsonFlag);
-		file_put_contents(OptionStorage::getOption()->getFullPath(), $jsonData);
+		file_put_contents(OptionPool::getOption()->getFullPath(), $jsonData);
 
 		WalletLib::join();
 	}

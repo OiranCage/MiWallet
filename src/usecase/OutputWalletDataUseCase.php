@@ -4,12 +4,12 @@
 namespace oiran\walletlib\usecase;
 
 
-use oiran\walletlib\storage\OptionStorage;
+use oiran\walletlib\pool\OptionPool;
 
 class OutputWalletDataUseCase
 {
 	public static function execute(): array {
-		$option = OptionStorage::getOption();
+		$option = OptionPool::getOption();
 		return json_decode(file_get_contents($option->getFullPath()), true);
 	}
 }
