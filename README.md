@@ -1,6 +1,7 @@
 # PHP
 
-VERSION: 8.0.10
+- use binary version `8.0.10`
+- use PocketMine-MP version `API4-beta11+dev2067`
 
 # Init
 ```php  
