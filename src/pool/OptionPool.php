@@ -1,12 +1,12 @@
 <?php
 
 
-namespace oiran\walletlib\storage;
+namespace oiran\walletlib\pool;
 
 
 use oiran\walletlib\model\Option;
 
-class OptionStorage
+class OptionPool
 {
 	private static Option $option;
 
