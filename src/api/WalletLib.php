@@ -17,8 +17,8 @@ class WalletLib
 	private static ?WalletStore $store = null;
 	private static ?WalletRepository $repository = null;
 
-	public static function init(string $fileName, string $folderPath, int $warningLevel = WarningLevel::DO_NOT_PROCESS) {
-		OptionPool::init($option = new Option($warningLevel, $fileName.".json", $folderPath));
+	public static function init(string $fileName, string $folderPath) {
+		OptionPool::init($option = new Option($fileName.".json", $folderPath));
 		if(!file_exists($option->getFullPath())) {
 			file_put_contents($option->getFullPath(), json_encode([]));
 		}
