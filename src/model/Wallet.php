@@ -4,38 +4,24 @@
 namespace oiran\walletlib\model;
 
 
-use Exception;
-use oiran\walletlib\api\WarningLevel;
-use oiran\walletlib\pool\OptionPool;
-
 class Wallet
 {
 	public function __construct(
 		private string $ownerXuid,
 		private string $ownerName,
-		private int $moneyAmount
+		private Money $money
 	) {}
 
-	public function earnCoin(int $value): bool {
-		$result = $this->moneyAmount + $value;
-		if(PHP_INT_MAX < $result) {
-		}
-
-		$this->moneyAmount = $result;
-		return true;
+	public function earn(int $amount) {
+		$this->money = $this->money->add(new Money($amount));
 	}
 
-	public function spendCoin(int $value): bool {
-		$result = $this->moneyAmount - $value;
-		if($this->moneyAmount < 0) {
-		}
-
-		$this->moneyAmount = $result;
-		return true;
+	public function spend(int $amount) {
+		$this->money = $this->money->sub(new Money($amount));
 	}
 
-	public function getMoney(): int {
-		return $this->moneyAmount;
+	public function getMoney(): Money {
+		return $this->money;
 	}
 
 	public function getOwnerXuid(): string {
