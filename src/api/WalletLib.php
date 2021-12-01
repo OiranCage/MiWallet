@@ -13,14 +13,6 @@ use oiran\walletlib\utility\FolderPath;
 
 class WalletLib
 {
-	public static function save(Wallet $wallet) {
-		if ($wallet->isChanged()) {
-			$folder = OptionPool::getOption()->get("wallet_data_folder");
-			$filePath = FolderPath::get().$folder.$wallet->getOwnerXuid().".json";
-			ThreadPool::submit(new SaveWalletThread($wallet, $filePath));
-		}
-	}
-
 	public static function findWallet(string $xuid): ?Wallet {
 		return WalletStore::findBy($xuid);
 	}

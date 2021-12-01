@@ -9,6 +9,7 @@ use oiran\walletlib\dto\WalletDTO;
 use oiran\walletlib\model\Wallet;
 use oiran\walletlib\pool\OptionPool;
 use oiran\walletlib\store\WalletStore;
+use oiran\walletlib\usecase\SaveWalletUseCase;
 use oiran\walletlib\utility\FolderPath;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
@@ -29,6 +30,6 @@ class EventListener implements Listener
 	}
 
 	public function onPlayerQuitEvent(PlayerQuitEvent $event) {
-		WalletLib::save(WalletStore::findBy($event->getPlayer()->getXuid()));
+		SaveWalletUseCase::execute(WalletStore::findBy($event->getPlayer()->getXuid()));
 	}
 }
