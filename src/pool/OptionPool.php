@@ -4,17 +4,17 @@
 namespace oiran\walletlib\pool;
 
 
-use oiran\walletlib\model\Option;
+use pocketmine\utils\Config;
 
 class OptionPool
 {
-	private static Option $option;
+	private static Config $option;
 
-	public static function init(Option $option) {
+	public static function init(Config $option) {
 		self::$option = $option;
 	}
 
-	public static function getOption(): Option {
+	public static function getOption(): Config {
 		return self::$option;
 	}
 
