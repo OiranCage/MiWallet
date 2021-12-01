@@ -10,11 +10,9 @@ use pocketmine\scheduler\AsyncTask;
 
 class SaveWalletThread extends AsyncTask
 {
-	private string $xuid;
 	private string $jsonData;
 
 	public function __construct(Wallet $wallet, private string $path) {
-		$this->xuid = $wallet->getOwnerXuid();
 		$this->jsonData = WalletDTO::encode($wallet);
 	}
 
