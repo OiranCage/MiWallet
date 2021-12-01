@@ -4,6 +4,8 @@
 namespace oiran\walletlib\model;
 
 
+use oiran\walletlib\pocketmine\event\PayMoneyEvent;
+
 class Wallet
 {
 	private bool $changed = false;
@@ -22,6 +24,16 @@ class Wallet
 	public function spend(int $amount) {
 		$this->changed = true;
 		$this->money = $this->money->sub(new Money($amount));
+	}
+
+	public function payTo(Wallet $wallet, int $amount) {
+		if ($amount < $this->money->getAmount()) {
+			$wallet->earn($amount);
+			$this->spend($amount);
+
+			$event = new PayMoneyEvent($this, $wallet);
+			$event->call();
+		}
 	}
 
 	public function isChanged(): bool {
