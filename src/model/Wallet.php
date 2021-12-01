@@ -28,6 +28,10 @@ class Wallet
 		return $this->changed;
 	}
 
+	public function resetCahnged() {
+		$this->changed = false;
+	}
+
 	public function getMoney(): Money {
 		return $this->money;
 	}
