@@ -4,7 +4,7 @@
 namespace oiran\walletlib;
 
 
-use oiran\walletlib\dto\WalletDTO;
+use oiran\walletlib\api\WalletLib;
 use oiran\walletlib\pool\OptionPool;
 use oiran\walletlib\pool\ThreadPool;
 use oiran\walletlib\store\WalletStore;
@@ -35,15 +35,8 @@ class Main extends PluginBase
 	}
 
 	protected function onDisable(): void {
-		$walletDataFolder = OptionPool::getOption()->get("wallet_data_folder");
-		$filePathPrefix = $this->getDataFolder().$walletDataFolder;
 		foreach (WalletStore::getWalletMap() as $wallet) {
-			if ($wallet->isChanged()) {
-				file_put_contents(
-					$filePathPrefix.$wallet->getOwnerXuid().".json",
-					WalletDTO::encode($wallet)
-				);
-			}
+			WalletLib::save($wallet);
 		}
 	}
 }
