@@ -6,6 +6,8 @@ namespace oiran\walletlib\model;
 
 class Wallet
 {
+	private bool $changed = false;
+
 	public function __construct(
 		private string $ownerXuid,
 		private string $ownerName,
@@ -13,11 +15,17 @@ class Wallet
 	) {}
 
 	public function earn(int $amount) {
+		$this->changed = true;
 		$this->money = $this->money->add(new Money($amount));
 	}
 
 	public function spend(int $amount) {
+		$this->changed = true;
 		$this->money = $this->money->sub(new Money($amount));
+	}
+
+	public function isChanged(): bool {
+		return $this->changed;
 	}
 
 	public function getMoney(): Money {
