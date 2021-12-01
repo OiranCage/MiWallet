@@ -4,9 +4,11 @@
 namespace oiran\walletlib;
 
 
+use oiran\walletlib\dto\WalletDTO;
 use oiran\walletlib\pool\OptionPool;
 use oiran\walletlib\pool\ThreadPool;
 use oiran\walletlib\store\WalletStore;
+use oiran\walletlib\utility\FolderPath;
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\AsyncPool;
 use pocketmine\utils\Config;
@@ -14,6 +16,8 @@ use pocketmine\utils\Config;
 class Main extends PluginBase
 {
 	protected function onEnable(): void {
+		FolderPath::init($this->getDataFolder());
+
 		OptionPool::init($option = new Config($this->getDataFolder()."option.json", Config::JSON, [
 			"default_money" => 0,
 			"wallet_data_folder" => "player".DIRECTORY_SEPARATOR,
@@ -37,10 +41,7 @@ class Main extends PluginBase
 			if ($wallet->isChanged()) {
 				file_put_contents(
 					$filePathPrefix.$wallet->getOwnerXuid().".json",
-					json_encode([
-						"ownerName" => $wallet->getOwnerName(),
-						"moneyAmount" => $wallet->getMoney()->getAmount()
-					])
+					WalletDTO::encode($wallet)
 				);
 			}
 		}
