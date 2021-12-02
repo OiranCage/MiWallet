@@ -4,11 +4,10 @@
 namespace oiran\walletlib;
 
 
-use oiran\walletlib\api\WalletLib;
 use oiran\walletlib\pool\OptionPool;
 use oiran\walletlib\pool\ThreadPool;
+use oiran\walletlib\repository\WalletRepository;
 use oiran\walletlib\store\WalletStore;
-use oiran\walletlib\usecase\SaveWalletUseCase;
 use oiran\walletlib\utility\FolderPath;
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\AsyncPool;
@@ -37,7 +36,7 @@ class Main extends PluginBase
 
 	protected function onDisable(): void {
 		foreach (WalletStore::getWalletMap() as $wallet) {
-			SaveWalletUseCase::execute($wallet);
+			WalletRepository::write($wallet);
 		}
 	}
 }
