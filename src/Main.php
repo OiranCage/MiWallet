@@ -32,6 +32,8 @@ class Main extends PluginBase
 			$this->getServer()->getLogger(),
 			$this->getServer()->getTickSleeper()
 		));
+
+		@mkdir($this->getDataFolder().$option->get("wallet_data_folder"));
 	}
 
 	protected function onDisable(): void {
