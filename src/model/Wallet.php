@@ -8,12 +8,11 @@ use oiran\walletlib\pocketmine\event\PayMoneyEvent;
 
 class Wallet
 {
-	private bool $changed = false;
-
 	public function __construct(
 		private string $ownerXuid,
 		private string $ownerName,
-		private Money $money
+		private Money $money,
+		private bool $changed = false
 	) {}
 
 	public function earn(int $amount) {

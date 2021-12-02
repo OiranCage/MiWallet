@@ -18,7 +18,12 @@ class EventListener implements Listener
 		$xuid = $event->getPlayer()->getXuid();
 		$wallet = WalletRepository::findBy($xuid);
 		if ($wallet === null) {
-			$wallet = new Wallet($xuid, $event->getPlayer()->getName(), OptionPool::getOption()->get("default_money"));
+			$wallet = new Wallet(
+				$xuid,
+				$event->getPlayer()->getName(),
+				OptionPool::getOption()->get("default_money"),
+				true
+			);
 		}
 
 		WalletStore::add($wallet);
