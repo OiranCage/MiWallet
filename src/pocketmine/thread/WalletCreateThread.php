@@ -27,15 +27,15 @@ class WalletCreateThread extends AsyncTask
 	}
 
 	public function onRun(): void {
-		$this->setResult(file_exists($this->filePath
+		$this->setResult(file_exists($this->filePath)
 			? json_decode(file_get_contents($this->filePath), true) : null
-		));
+		);
 	}
 
 	public function onCompletion(): void {
 		$result = $this->getResult();
 		WalletStore::add($wallet = $result === null
-			? new Wallet($this->xuid, $this->name, new Money($this->defaultMoney))
+			? new Wallet($this->xuid, $this->name, new Money($this->defaultMoney), true)
 			: WalletDTO::decode($this->xuid, $result)
 		);
 
