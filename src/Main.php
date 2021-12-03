@@ -4,6 +4,7 @@
 namespace oiran\walletlib;
 
 
+use oiran\walletlib\pocketmine\EventListener;
 use oiran\walletlib\pool\OptionPool;
 use oiran\walletlib\pool\ThreadPool;
 use oiran\walletlib\repository\WalletRepository;
@@ -35,6 +36,8 @@ class Main extends PluginBase
 		));
 
 		@mkdir($this->getDataFolder().$option->get("wallet_data_folder"));
+
+		$this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
 	}
 
 	protected function onDisable(): void {
