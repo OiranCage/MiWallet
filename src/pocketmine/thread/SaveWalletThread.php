@@ -24,6 +24,6 @@ class SaveWalletThread extends AsyncTask
 	}
 
 	public function onCompletion(): void {
-		WalletStore::findBy($this->xuid)?->resetCahnged();
+		WalletStore::findBy($this->xuid)?->initChangeFlag();
 	}
 }
