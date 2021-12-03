@@ -18,6 +18,7 @@ class WalletLib
 		$wallet = WalletStore::findBy($xuid);
 		if ($wallet === null) {
 			$wallet = WalletRepository::findBy($xuid);
+			WalletStore::add($wallet);
 		}
 
 		return $wallet;
