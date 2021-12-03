@@ -1,16 +1,16 @@
 <?php
 
 
-namespace oiran\walletlib\api;
+namespace oiran\miwallet\api;
 
 
-use oiran\walletlib\model\Wallet;
-use oiran\walletlib\pocketmine\thread\SaveWalletThread;
-use oiran\walletlib\pool\OptionPool;
-use oiran\walletlib\pool\ThreadPool;
-use oiran\walletlib\repository\WalletRepository;
-use oiran\walletlib\store\WalletStore;
-use oiran\walletlib\utility\FolderPath;
+use oiran\miwallet\model\Wallet;
+use oiran\miwallet\pocketmine\thread\SaveWalletThread;
+use oiran\miwallet\pool\OptionPool;
+use oiran\miwallet\pool\ThreadPool;
+use oiran\miwallet\repository\WalletRepository;
+use oiran\miwallet\store\WalletStore;
+use oiran\miwallet\utility\FolderPath;
 
 class WalletLib
 {

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace oiran\walletlib\pocketmine\event;
+namespace oiran\miwallet\pocketmine\event;
 
 
-use oiran\walletlib\model\Wallet;
+use oiran\miwallet\model\Wallet;
 use pocketmine\event\Event;
 
 class PayMoneyEvent extends Event

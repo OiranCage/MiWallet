@@ -1,11 +1,11 @@
 <?php
 
 
-namespace oiran\walletlib\dto;
+namespace oiran\miwallet\dto;
 
 
-use oiran\walletlib\model\Money;
-use oiran\walletlib\model\Wallet;
+use oiran\miwallet\model\Money;
+use oiran\miwallet\model\Wallet;
 
 class WalletDTO
 {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace oiran\walletlib\utility;
+namespace oiran\miwallet\utility;
 
 
 class FolderPath

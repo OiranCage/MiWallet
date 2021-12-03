@@ -1,7 +1,7 @@
 <?php
 
 
-namespace oiran\walletlib\model;
+namespace oiran\miwallet\model;
 
 
 class Money

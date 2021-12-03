@@ -1,11 +1,11 @@
 {
-  "name": "oirancage/wallet-lib",
+  "name": "oirancage/miwallet",
   "description": "a library for adding economic concepts.",
   "type": "project",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "oiran\\walletlib\\": "src"
+      "oiran\\miwallet\\": "src"
     }
   },
   "require": {

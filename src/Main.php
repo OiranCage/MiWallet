@@ -1,15 +1,15 @@
 <?php
 
 
-namespace oiran\walletlib;
+namespace oiran\miwallet;
 
 
-use oiran\walletlib\pocketmine\EventListener;
-use oiran\walletlib\pool\OptionPool;
-use oiran\walletlib\pool\ThreadPool;
-use oiran\walletlib\repository\WalletRepository;
-use oiran\walletlib\store\WalletStore;
-use oiran\walletlib\utility\FolderPath;
+use oiran\miwallet\pocketmine\EventListener;
+use oiran\miwallet\pool\OptionPool;
+use oiran\miwallet\pool\ThreadPool;
+use oiran\miwallet\repository\WalletRepository;
+use oiran\miwallet\store\WalletStore;
+use oiran\miwallet\utility\FolderPath;
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\AsyncPool;
 use pocketmine\utils\Config;

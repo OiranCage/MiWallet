@@ -1,16 +1,16 @@
 <?php
 
 
-namespace oiran\walletlib\pocketmine\thread;
+namespace oiran\miwallet\pocketmine\thread;
 
 
-use oiran\walletlib\dto\WalletDTO;
-use oiran\walletlib\model\Money;
-use oiran\walletlib\model\Wallet;
-use oiran\walletlib\pocketmine\event\WalletCreateEvent;
-use oiran\walletlib\pool\OptionPool;
-use oiran\walletlib\store\WalletStore;
-use oiran\walletlib\utility\FolderPath;
+use oiran\miwallet\dto\WalletDTO;
+use oiran\miwallet\model\Money;
+use oiran\miwallet\model\Wallet;
+use oiran\miwallet\pocketmine\event\WalletCreateEvent;
+use oiran\miwallet\pool\OptionPool;
+use oiran\miwallet\store\WalletStore;
+use oiran\miwallet\utility\FolderPath;
 use pocketmine\scheduler\AsyncTask;
 
 class WalletCreateThread extends AsyncTask

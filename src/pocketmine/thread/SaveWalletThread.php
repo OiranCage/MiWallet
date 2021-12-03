@@ -1,12 +1,12 @@
 <?php
 
 
-namespace oiran\walletlib\pocketmine\thread;
+namespace oiran\miwallet\pocketmine\thread;
 
 
-use oiran\walletlib\dto\WalletDTO;
-use oiran\walletlib\model\Wallet;
-use oiran\walletlib\store\WalletStore;
+use oiran\miwallet\dto\WalletDTO;
+use oiran\miwallet\model\Wallet;
+use oiran\miwallet\store\WalletStore;
 use pocketmine\scheduler\AsyncTask;
 
 class SaveWalletThread extends AsyncTask

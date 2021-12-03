@@ -1,15 +1,15 @@
 <?php
 
 
-namespace oiran\walletlib\repository;
+namespace oiran\miwallet\repository;
 
 
-use oiran\walletlib\dto\WalletDTO;
-use oiran\walletlib\model\Wallet;
-use oiran\walletlib\pocketmine\thread\SaveWalletThread;
-use oiran\walletlib\pool\OptionPool;
-use oiran\walletlib\pool\ThreadPool;
-use oiran\walletlib\utility\FolderPath;
+use oiran\miwallet\dto\WalletDTO;
+use oiran\miwallet\model\Wallet;
+use oiran\miwallet\pocketmine\thread\SaveWalletThread;
+use oiran\miwallet\pool\OptionPool;
+use oiran\miwallet\pool\ThreadPool;
+use oiran\miwallet\utility\FolderPath;
 
 class WalletRepository
 {

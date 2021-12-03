@@ -1,10 +1,10 @@
 <?php
 
 
-namespace oiran\walletlib\store;
+namespace oiran\miwallet\store;
 
 
-use oiran\walletlib\model\Wallet;
+use oiran\miwallet\model\Wallet;
 
 class WalletStore
 {

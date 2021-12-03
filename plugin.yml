@@ -1,5 +1,5 @@
-main: oiran\walletlib\Main
-name: WalletLib
+main: oiran\miwallet\Main
+name: MiWallet
 api: 4.0.0
 version: 0.0.1
-src-namespace-prefix: oiran\walletlib
+src-namespace-prefix: oiran\miwallet

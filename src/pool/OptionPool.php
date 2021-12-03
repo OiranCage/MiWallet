@@ -1,7 +1,7 @@
 <?php
 
 
-namespace oiran\walletlib\pool;
+namespace oiran\miwallet\pool;
 
 
 use pocketmine\utils\Config;

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace oiran\walletlib\model;
+namespace oiran\miwallet\model;
 
 
-use oiran\walletlib\pocketmine\event\PayMoneyEvent;
+use oiran\miwallet\pocketmine\event\PayMoneyEvent;
 
 class Wallet
 {
