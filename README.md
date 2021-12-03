@@ -23,15 +23,23 @@ $xuid = $player->getXuid();
 $wallet = WalletLib::findWallet($xuid);
 ```
 
-### check Wallet money amount.
+### check Wallet Money amount.
 ```php  
-$wallet->getMoney()->getAmount();
+$moneyAmount = $wallet->getMoney()->getAmount();
 ```
 
 ### earn or spend Money.
 ```php  
 use oiran\walletlib\model\Money;
 
-$wallet->earn(new Money(200));
-$wallet->spend(new Money(100));
+$wallet->earn(200);
+$wallet->spend(100);
+```
+
+### pay Money to other Wallet.
+```php  
+$to = WalletLib::findWallet("to player xuid");
+$from = WalletLib::findWallet("from player xuid");
+
+$from->payTo($to, 300);
 ```
