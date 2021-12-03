@@ -39,7 +39,7 @@ class Wallet
 		return $this->changed;
 	}
 
-	public function resetCahnged() {
+	public function initChangeFlag() {
 		$this->changed = false;
 	}
 
