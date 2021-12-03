@@ -22,7 +22,8 @@ class Main extends PluginBase
 			"default_money" => 0,
 			"wallet_data_folder" => "player".DIRECTORY_SEPARATOR,
 			"pool_size" => 2,
-			"worker_memory_limit" => 256
+			"worker_memory_limit" => 256,
+			"async_create_wallet" => false
 		]));
 
 		ThreadPool::init(new AsyncPool(
