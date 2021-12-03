@@ -1,7 +1,7 @@
 # Summary
 This plugin adds the concept of money to the server.
 
-Wallet data held by the player is stored in `.json` format and written asynchronously.
+Wallet data held by the player is stored in `.json` format and I/O asynchronously.
 
 As for the Option setting, you can change the asynchronous setting to your liking. Basically, there is no need to change the default settings.
 
