@@ -7,7 +7,7 @@ namespace oiran\walletlib\pocketmine;
 use oiran\walletlib\model\Money;
 use oiran\walletlib\model\Wallet;
 use oiran\walletlib\pocketmine\event\WalletCreateEvent;
-use oiran\walletlib\pocketmine\thread\CreateWalletThread;
+use oiran\walletlib\pocketmine\thread\WalletCreateThread;
 use oiran\walletlib\pool\OptionPool;
 use oiran\walletlib\pool\ThreadPool;
 use oiran\walletlib\repository\WalletRepository;
@@ -24,7 +24,7 @@ class EventListener implements Listener
 		$defaultMoney = OptionPool::getOption()->get("default_money");
 
 		if (OptionPool::getOption()->get("async_create_wallet")) {
-			ThreadPool::submit(new CreateWalletThread($xuid, $name, $defaultMoney));
+			ThreadPool::submit(new WalletCreateThread($xuid, $name, $defaultMoney));
 		} else {
 			$wallet = WalletRepository::findBy($xuid);
 			if ($wallet === null) {

@@ -30,7 +30,7 @@ class Wallet
 			$wallet->earn($amount);
 			$this->spend($amount);
 
-			$event = new PayMoneyEvent($this, $wallet);
+			$event = new PayMoneyEvent($wallet, $this);
 			$event->call();
 		}
 	}

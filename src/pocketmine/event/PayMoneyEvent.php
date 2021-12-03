@@ -10,15 +10,15 @@ use pocketmine\event\Event;
 class PayMoneyEvent extends Event
 {
 	public function __construct(
-		private Wallet $from,
-		private Wallet $to
+		private Wallet $to,
+		private Wallet $from
 	) {}
-
-	public function getFrom(): Wallet {
-		return $this->from;
-	}
 
 	public function getTo(): Wallet {
 		return $this->to;
+	}
+
+	public function getFrom(): Wallet {
+		return $this->from;
 	}
 }
