@@ -22,7 +22,7 @@ class Money
 		if($this->amount - $money->getAmount() < 0) {
 			return new Money(0);
 		} else {
-			return new Money($money->getAmount() - $this->amount);
+			return new Money($this->amount - $money->getAmount());
 		}
 	}
 
