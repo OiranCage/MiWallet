@@ -42,8 +42,4 @@ class EventListener implements Listener
 		WalletRepository::write(WalletStore::findBy($event->getPlayer()->getXuid()));
 		WalletStore::delete($event->getPlayer()->getXuid());
 	}
-
-	public function onWalletCreateEvent(WalletCreateEvent $event) {
-		var_dump($event->getWallet());
-	}
 }
