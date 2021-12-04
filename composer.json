@@ -7,8 +7,5 @@
     "psr-4": {
       "oiran\\miwallet\\": "src"
     }
-  },
-  "require": {
-    "phpunit/phpunit": "^9.5"
   }
 }

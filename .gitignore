@@ -23,6 +23,3 @@ composer.lock
 # PHP
 bin/*
 *.phar
-
-# PHP Unit Test
-.phpunit.result.cache
