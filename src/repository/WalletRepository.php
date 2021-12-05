@@ -17,7 +17,7 @@ class WalletRepository
 		$folder = OptionPool::getOption()->get("wallet_data_folder");
 		$filePath = FolderPath::get().$folder.$xuid.".json";
 
-		return file_exists($filePath) ? WalletDTO::decode($xuid, json_decode(file_get_contents($filePath))) : null;
+		return file_exists($filePath) ? WalletDTO::decode($xuid, json_decode(file_get_contents($filePath), true)) : null;
 	}
 
 	public static function write(Wallet $wallet) {
